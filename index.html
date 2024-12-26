@@ -7,32 +7,67 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <table class="library-info">
-        <tr class="header">
-            <th>Title</th>
-            <th>Author</th>
-            <th>Pages</th>
-            <th>Read</th>
-        </tr>
-    </table>
+    <header>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>Book Logo</title>
+            <path d="M19 2L14 6.5V17.5L19 13V2M6.5 5C4.55 5 2.45 5.4 1 6.5V21.16C1 21.41 1.25 21.66 1.5 21.66C1.6 21.66 1.65 21.59 1.75 21.59C3.1 20.94 5.05 20.5 6.5 20.5C8.45 20.5 10.55 20.9 12 22C13.35 21.15 15.8 20.5 17.5 20.5C19.15 20.5 20.85 20.81 22.25 21.56C22.35 21.61 22.4 21.59 22.5 21.59C22.75 21.59 23 21.34 23 21.09V6.5C22.4 6.05 21.75 5.75 21 5.5V19C19.9 18.65 18.7 18.5 17.5 18.5C15.8 18.5 13.35 19.15 12 20V6.5C10.55 5.4 8.45 5 6.5 5Z" />
+        </svg>
+        <h1>My Library</h1>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <title>Bookmark Logo</title>
+            <path d="M15,5A2,2 0 0,1 17,7V23L10,20L3,23V7C3,5.89 3.9,5 5,5H15M9,1H19A2,2 0 0,1 21,3V19L19,18.13V3H7A2,2 0 0,1 9,1Z" />
+        </svg>
+    </header>
+    <div class="main">
+        <table class="library-info">
+            <thead>
+                <tr class="header">
+                    <th id="title-header">Title</th>
+                    <th id="author-header">Author</th>
+                    <th id="pages-header">Pages</th>
+                    <th id="read-header">Read?</th>
+                    <th id="button-header">
+                        <button class="show-dialog">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <title>Add Book</title>
+                                <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                            </svg>
+                        </button>
+                    </th>
+                    <th id="button-header"></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
     <dialog>
-        <form>
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
-
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author">
-
-            <label for="pages">Pages</label>
-            <input type="number" id="pages" name="pages">
-
-            <label for="read">Have you read this book?</label>
-            <input type="checkbox" id="read" name="read">
-
-            <button class="submit-form" type="submit">Add Book</button>
+        <h2>Enter book information</h2>
+        <form class="book-inputs">
+            <div class="book-input">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" required>
+            </div>
+            <div class="book-input">
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div class="book-input">
+                <label for="pages">Pages</label>
+                <input type="number" id="pages" name="pages">
+            </div>
+            <div class="book-checkbox">
+                <label for="read">Have you read this book?</label>
+                <input type="checkbox" id="read" name="read">
+            </div>
+            <button class="add-book" type="submit">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <title>Add Book</title>
+                    <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                </svg>
+            </button>
         </form>
     </dialog>
-    <button class="show-form">Add Book</button>
     <script src="script.js"></script>
 </body>
 </html>
