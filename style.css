@@ -7,6 +7,7 @@
 body {
     background-color: #475569;
     color: #f1f5f9;
+    min-width: 850px;
     font-family: "Calibri", sans-serif;
     font-size: 20px;
 }
@@ -17,16 +18,21 @@ h1 {
 }
 
 h2 {
+    font-size: 40px;
     margin-bottom: 20px;
 }
 
 dialog {
     background-color: #0f172a;
     color: #f1f5f9;
-    padding: 50px;
+    padding: 30px;
     border: 5px, solid, #020617;
     border-radius: 10px;
     margin: auto;
+}
+
+.close-dialog {
+    align-self: end;
 }
 
 .book-inputs {
@@ -43,11 +49,16 @@ dialog {
 
 .book-input input{
     height: 22px;
+    width: 300px;
+}
+
+#pages {
+    width: 75px;
 }
 
 .book-checkbox {
     display: flex; 
-    justify-content: space-between;
+    gap: 10px;
 }
 
 .book-checkbox input {
@@ -59,16 +70,16 @@ dialog {
     align-self: end;
 }
 
-td {
-    text-align: center;
-}
-
 button {
     border: 0;
     border-radius: 10px;
     background-color: #334155;
     height: 40px;
     width: 40px;
+}
+
+button:hover {
+    background-color: #94a3b8
 }
 
 svg {
@@ -101,7 +112,13 @@ header svg {
 table {
     border-spacing: 30px;
     margin-left: 150px;
+    table-layout: fixed;
 }
+
+th {
+    font-size: 20px;
+}
+
 
 #title-header {
     width: 300px;
@@ -123,8 +140,18 @@ table {
     border-bottom: 5px solid #020617;
 }
 
-#button-header {
+.button-header {
     width: 150px;
+}
+
+td {
+    max-width: 300px;
+    text-align: center;
+    overflow-wrap: break-word;
+}
+
+.pages-info {
+    max-width: 150px;
 }
 
 

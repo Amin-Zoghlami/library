@@ -21,6 +21,12 @@ addBookButton.addEventListener("click", (event) => {
     document.querySelector("form").reset();
 });
 
+const closeDialogButton = document.querySelector(".close-dialog");
+closeDialogButton.addEventListener("click", () => {
+    dialog.close();
+    document.querySelector("form").reset();
+});
+
 function Book(title, author, pages, read) {
     this.title = title;
     this.author = author;
