@@ -25,7 +25,8 @@ addBookButton.addEventListener("click", (event) => {
 });
 
 const closeDialogButton = document.querySelector(".close-dialog");
-closeDialogButton.addEventListener("click", () => {
+closeDialogButton.addEventListener("click", (event) => {
+    event.preventDefault();
     dialog.close();
     document.querySelector("form").reset();
 });
