@@ -9,16 +9,19 @@ showDialogButton.addEventListener("click", () => {
 
 const addBookButton = document.querySelector(".add-book");
 addBookButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    
-    const title = document.getElementById("title").value;
-    const author = document.getElementById("author").value;
-    const pages = document.getElementById("pages").value;
-    const read = document.getElementById("read").checked ? "Yes" : "No";
-    addBook(title, author, pages, read);
-    
-    dialog.close(); 
-    document.querySelector("form").reset();
+    const form = document.querySelector("form");
+
+    if (form.checkValidity()) {
+        event.preventDefault();
+        const title = document.getElementById("title").value;
+        const author = document.getElementById("author").value;
+        const pages = document.getElementById("pages").value;
+        const read = document.getElementById("read").checked ? "Yes" : "No";
+        addBook(title, author, pages, read);
+        
+        dialog.close(); 
+        document.querySelector("form").reset();
+    }
 });
 
 const closeDialogButton = document.querySelector(".close-dialog");
