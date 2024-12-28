@@ -31,26 +31,48 @@ closeDialogButton.addEventListener("click", (event) => {
     document.querySelector("form").reset();
 });
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read; 
-}
+class Book {
+    constructor(title, author, pages, read) {
+         this.title = title;
+         this.author = author;
+         this.pages = pages;
+         this.read = read;
+    }
 
-Book.prototype.info = function() {
-    return [this.title, this.author, this.pages, this.read];
-}
+    info() {
+        return [this.title, this.author, this.pages, this.read];
+    }
 
-Book.prototype.changeRead = function() {
-    if (this.read == "No") {
-        this.read = "Yes"
+    changeRead() {
+        if (this.read == "No") {
+            this.read = "Yes"
+            return this.read;
+        }
+                
+        this.read = "No";
         return this.read;
     }
-    
-    this.read = "No";
-    return this.read;
 }
+// function Book(title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read; 
+// }
+
+// Book.prototype.info = function() {
+//     return [this.title, this.author, this.pages, this.read];
+// }
+
+// Book.prototype.changeRead = function() {
+//     if (this.read == "No") {
+//         this.read = "Yes"
+//         return this.read;
+//     }
+    
+//     this.read = "No";
+//     return this.read;
+// }
 
 function addBook(title, author, pages, read) {
     const newBook = new Book(title, author, pages, read);
